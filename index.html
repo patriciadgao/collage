@@ -1,36 +1,40 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Collage</title>
-    <style>
-#div1 {
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Collage</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <style>
+  .star {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+      #div1 {
   width: 350px;
   height: 70px;
   padding: 10px;
   border: 1px solid #aaaaaa;
   background-color: blue;
 }
-</style>
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  </style>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-$( "#drag1" ).draggable();
-      $( "#drag2" ).draggable();
-      $( "#drag3" ).draggable();
-      $( "#drag4" ).draggable();
-      $( "div1" ).droppable();
+</head>
+<body>
+ 
+<div id="draggable" class="star">Drag me</div>
+  <img id="drag1" class="star" src="goldstar.jpeg" width="50" height="50">
+  <div id="thingy" class="star">
+  <img id=drag2" src="goldstar.jpg" width="50" height="50"></div>
+                                                          <div id="droppable"></div>
+ 
+<script>
+$( "#draggable" ).draggable();
+                     $( "#div1" ).droppable();
+                              $( "#drag1" ).draggabble();
+                                         $( "#thingy" ).draggable();
 </script>
-  </head>
-  <body>
-<div id="div1"></div>
-
-<img id="drag1" src="goldstar.jpeg" width="50" height="50">
-    <img id="drag2" src="goldstar.jpeg" width="50" height="50">
-    <img id="drag3" src="goldstar.jpeg" width="50" height="50">
-<img id="drag4" src="goldstar.jpeg" width="50" height="50">
-    <a href="collage/jqueryThing">go to the other thing</a>
-
-    
-  </body>
+ 
+</body>
 </html>
