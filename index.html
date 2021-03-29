@@ -2,6 +2,14 @@
 <html>
   <head>
     <title>Collage</title>
+    <style>
+#div1 {
+  width: 350px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+</style>
     <script>
 function allowDrop(ev) {
   ev.preventDefault();
@@ -19,7 +27,7 @@ function drop(ev) {
 </script>
   </head>
   <body>
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color: blue;" width="100" height="75"></div>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
 <img id="drag1" src="goldstar.jpeg" draggable="true" ondragstart="drag(event)" width="50" height="50">
     <img id="drag2" src="goldstar.jpeg" draggable="true" ondragstart="drag(event)" width="50" height="50">
