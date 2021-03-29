@@ -10,12 +10,12 @@
     height: 100px;
     background: #ccc;
   }
-      #div1 {
+      #div1, #drag3 {
   width: 350px;
   height: 70px;
   padding: 10px;
   border: 1px solid #aaaaaa;
-  background-color: blue;
+  background-color: deepskyblue;
 }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -28,12 +28,14 @@
   <div id="thingy">
   <img id="drag2" src="goldstar.jpeg" width="50" height="50"></div>
                                                           <div id="div1"></div>
+  <div id="drag3"></div>
  
 <script>
 $( "#draggable" ).draggable();
                      $( "#div1" ).droppable();
                               $( "#drag1" ).draggabble();
                                          $( "#thingy" ).draggable();
+  $( "#drag3" ).draggable();
 </script>
  
 </body>
