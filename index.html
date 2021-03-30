@@ -94,10 +94,29 @@
   <div id="draggable10" class="d grad block2"></div>
 	</div>
 	<div class='graybox'>
+		<div class="starter purple block"></div>
 	</div>
   </div>
 <script>
-$( ".d" ).draggable({containment: "container", stack: ".d"});
+$(function() {
+	var starter = $(.starter);
+	block.droppable({
+		accept: ".block",
+		greedy: true,
+		drop: function(event, ui) {
+			ui.draggable.detach();
+		}
+	});
+	starter.on('mousedown', function(event)
+		   {
+		var $this = $(this);
+		var $block = $('<div>', {
+			class: "grad block",
+			id: "block" + ($('.block').length + 1)
+		}).appendTo($this.parent()).draggable();
+		$block.trigger(event);
+	});
+});
 </script>
  
 </body>
