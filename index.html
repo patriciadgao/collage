@@ -20,7 +20,7 @@
   .dooder {
     width: 40px;
     height: 40px;
-    background: red;
+    background: yellow;
     }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -29,6 +29,8 @@
 <body>
  
 <div id="draggable" class="star">Drag me</div>
+  <div id="draggable3" class="star">Drag me</div>
+
   <div id="draggable2" class="dooder">Woohoo</div>
   <img id="drag1" src="goldstar.jpeg" width="50" height="50">
   <div id="thingy">
@@ -38,6 +40,7 @@
  
 <script>
 $( "#draggable" ).draggable();
+ $( "#draggable3" ).draggable();
 $( "#div1" ).droppable();
 $( "#drag1" ).draggabble();
 $( "#thingy" ).draggable();
