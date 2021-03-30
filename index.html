@@ -13,23 +13,28 @@
       #div1 {
   width: 350px;
   height: 70px;
-  padding: 10px;
-  border: 1px solid #aaaaaa;
-  background-color: deepskyblue;
+  background: deepskyblue;
 }
   .dooder {
     width: 40px;
     height: 40px;
     background: yellow;
     }
+    
+    .container {
+      width: 1000px;
+      height: 1000px;
+      background: aliceblue;
+    }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
- 
-<div id="draggable" class="star">Drag me</div>
-  <div id="draggable3" class="star">Drag me</div>
+<div id="container1" class="container">
+  <div id="draggable" class="star">Drag me</div>
+  <div id=draggable3" class="star">Drag meee</div>
+  </div>
 
   <div id="draggable2" class="dooder">Woohoo</div>
   <img id="drag1" src="goldstar.jpeg" width="50" height="50">
@@ -39,8 +44,8 @@
   <div id="drag3" class="dooder"></div>
  
 <script>
-$( "#draggable" ).draggable();
- $( "#draggable3" ).draggable();
+$( "#draggable" ).draggable({containment: "parent"});
+ $( "#draggable3" ).draggable({containment: "parent"});
 $( "#div1" ).droppable();
 $( "#drag1" ).draggabble();
 $( "#thingy" ).draggable();
