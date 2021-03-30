@@ -39,24 +39,17 @@
 </head>
 <body>
 <div id="container1" class="container">
-  <div id="draggable" class="orange block"></div>
-  <div id="draggable2" class="purple block"></div>
-  <div id="draggable3" class="orange block"></div>
-  <div id="draggable4" class="purple block"></div>
-  <div id="draggable5" class="orange rectangle1"></div>
-  <div id="draggable6" class="purple rectangle1"></div>
-  <div id="draggable7" class="orange rectangle2"></div>
-  <div id="draggable8" class="purple rectangle2"></div>
+  <div id="draggable" class="d orange block"></div>
+  <div id="draggable2" class="d purple block"></div>
+  <div id="draggable3" class="d orange block"></div>
+  <div id="draggable4" class="d purple block"></div>
+  <div id="draggable5" class="d orange rectangle1"></div>
+  <div id="draggable6" class="d purple rectangle1"></div>
+  <div id="draggable7" class="d orange rectangle2"></div>
+  <div id="draggable8" class="d purple rectangle2"></div>
   </div>
 <script>
-$( "#draggable" ).draggable({containment: "parent", stack: true});
-$( "#draggable2" ).draggable({containment: "parent", stack: true});
- $( "#draggable3" ).draggable({containment: "parent", stack: true});
- $( "#draggable4" ).draggable({containment: "parent", stack: true});
-  $( "#draggable5" ).draggable({containment: "parent", stack: true});
-$( "#draggable6" ).draggable({containment: "parent", stack: true});
- $( "#draggable7" ).draggable({containment: "parent", stack: true});
- $( "#draggable8" ).draggable({containment: "parent", stack: true});
+$( ".d" ).draggable({containment: "parent", stack: ".d"});
 </script>
  
 </body>
