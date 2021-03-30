@@ -5,26 +5,23 @@
   <title>Collage</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <style>
-  .star {
-    width: 100px;
-    height: 100px;
-    background: #ccc;
-  }
-      #div1 {
-  width: 350px;
-  height: 70px;
-  background: deepskyblue;
-}
-  .dooder {
-    width: 40px;
-    height: 40px;
-    background: yellow;
+    .block {
+      width: 50px;
+      height: 50px;
+    }
+
+    .orange {
+      background: #e9582b;
+    }
+
+    .purple {
+      background: #ba3ef6;
     }
     
     .container {
       width: 500px;
       height: 500px;
-      background: pink;
+      background: #f5f5f5;
     }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -32,25 +29,16 @@
 </head>
 <body>
 <div id="container1" class="container">
-  <div id="draggable" class="star">Drag me</div>
-  <div id="draggable3" class="star">Drag meee</div>
+  <div id="draggable" class="orange block"></div>
+  <div id="draggable2" class="purple block"></div>
+  <div id="draggable3" class="orange block"></div>
+  <div id="draggable4" class="purple block"></div>
   </div>
-
-  <div id="draggable2" class="dooder">Woohoo</div>
-  <img id="drag1" src="goldstar.jpeg" width="50" height="50">
-  <div id="thingy">
-  <img id="drag2" src="goldstar.jpeg" width="50" height="50"></div>
-                                                          <div id="div1"></div>
-  <div id="drag3" class="dooder"></div>
- 
 <script>
 $( "#draggable" ).draggable({containment: "parent"});
+$( "#draggable2" ).draggable({containment: "parent"});
  $( "#draggable3" ).draggable({containment: "parent"});
-$( "#div1" ).droppable();
-$( "#drag1" ).draggabble();
-$( "#thingy" ).draggable();
-$( "#drag3" ).draggable();
-$( "#draggable2" ).draggable();
+ $( "#draggable4" ).draggable({containment: "parent"});
 </script>
  
 </body>
