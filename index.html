@@ -66,6 +66,12 @@
 	  background-size: 200% 100%;
     animation: gradient 3s linear infinite;
     animation-direction: alternate;
+	    
+	    .starter {
+		    width: 50px;
+		    height: 50px;
+		    margin: 10px;
+	    }
 }
 @keyframes gradient {
     0% {background-position: 0%}
@@ -94,28 +100,33 @@
   <div id="draggable10" class="d grad block2"></div>
 	</div>
 	<div class='graybox'>
-		<div class="starter purple block"></div>
+		<div class="starter purple"></div>
 	</div>
   </div>
 <script>
 $(function() {
-	var starter = $(.starter);
-	block.droppable({
-		accept: ".block",
-		greedy: true,
-		drop: function(event, ui) {
-			ui.draggable.detach();
-		}
-	});
-	starter.on('mousedown', function(event)
-		   {
-		var $this = $(this);
-		var $block = $('<div>', {
-			class: "grad block",
-			id: "block" + ($('.block').length + 1)
-		}).appendTo($this.parent()).draggable();
-		$block.trigger(event);
-	});
+  var starter = $(".starter");
+
+  starter.droppable({
+    accept: ".block",
+    greedy: true,
+    drop: function(event, ui) {
+      ui.draggable.detach();
+    }
+  });
+
+  starter.on('mousedown', function(event) {
+    var $this = $(this);
+    var $block = $('<div>', {
+      class: "grad block",
+      id: "block-" + ($(".block").length + 1)
+    }).css({
+      left: event.pageX - 25,
+      top: event.pageY - 25,
+      position: "absolute"
+    }).appendTo($this.parent()).draggable();
+    $block.trigger(event);
+  });
 });
 </script>
  
