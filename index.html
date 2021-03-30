@@ -120,10 +120,6 @@ $(function() {
     var $block = $('<div>', {
       class: "grad block",
       id: "block-" + ($(".block").length + 1)
-    }).css({
-      left: event.pageX - 25,
-      top: event.pageY - 25,
-      position: "absolute"
     }).appendTo($this.parent()).draggable();
     $block.trigger(event);
   });
