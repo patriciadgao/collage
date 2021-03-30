@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Collage</title>
+	<script src="jquery.ui.touch-punch.min.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <style>
     .block {
@@ -72,7 +73,7 @@
 }
 	  
 	  .bowl {
-  background: blue;
+  background: yellow;
   width: 50px;
   height: 50px;
 }
@@ -86,7 +87,6 @@
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script src="jquery.ui.touch-punch.min.js"></script>
 </head>
 <body>
   <div id="container" class="box">
@@ -111,7 +111,7 @@
 	</div>
   </div>
 <script>
-	$( ".d" ).draggable({containment: "parent", stack: true});
+	$( ".d" ).draggable({containment: "parent"});
 $(function() {
   var bowl = $(".bowl");
 
@@ -133,8 +133,7 @@ $(function() {
       top: event.pageY - 25,
       position: "absolute"
     }).appendTo($this.parent()).draggable({
-      containment: "parent",
-	    stack: true
+      containment: "parent"
     });
     $stone.trigger(event);
   });
