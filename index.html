@@ -36,11 +36,17 @@
 	  .grad2 {
 		  background-image: linear-gradient(#ba3ef6, #e9582b);
 	  }
-    .container {
+    .graybox {
       width: 500px;
       height: 500px;
       background: #f5f5f5;
     }
+	 
+	.blackbox {
+		width: 200px;
+		height: 500px;
+		background: black;
+	  }
     
     .box {
       display: flex;
@@ -64,8 +70,8 @@
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
-  <div class="box">
-<div id="container1" class="container">
+  <div id="container" class="box">
+	<div class='blackbox'>
   <div id="draggable" class="d orange block"></div>
   <div id="draggable2" class="d purple block"></div>
   <div id="draggable3" class="d orange block"></div>
@@ -80,10 +86,12 @@
   <div id="draggable10" class="d grad block1"></div>
 	<div id="draggable12" class="d grad2 block"></div>
   <div id="draggable10" class="d grad block2"></div>
-  </div>
+	</div>
+	<div class='graybox'>
+	</div>
   </div>
 <script>
-$( ".d" ).draggable({containment: "parent", stack: ".d"});
+$( ".d" ).draggable({containment: "container", stack: ".d"});
 </script>
  
 </body>
