@@ -28,16 +28,27 @@
       background: #ba3ef6;
     }
     
+    .grad {
+      background-image: linear-gradient(#e9582b, #ba3ef6);
+    }
+    
     .container {
       width: 500px;
       height: 500px;
       background: #f5f5f5;
+    }
+    
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
+  <div class="box">
 <div id="container1" class="container">
   <div id="draggable" class="d orange block"></div>
   <div id="draggable2" class="d purple block"></div>
@@ -47,6 +58,9 @@
   <div id="draggable6" class="d purple rectangle1"></div>
   <div id="draggable7" class="d orange rectangle2"></div>
   <div id="draggable8" class="d purple rectangle2"></div>
+  <div id="draggable9" class="d grad block"></div>
+  <div id="draggable10" class="d grad block"></div>
+  </div>
   </div>
 <script>
 $( ".d" ).draggable({containment: "parent", stack: ".d"});
