@@ -140,6 +140,10 @@ $(function() {
     var $stone = $('<div>', {
       class: "stone",
       id: "stone-" + ($(".stone").length + 1)
+    }).css({
+      left: event.pageX - 25,
+      top: event.pageY - 25,
+      position: "absolute"
     }).appendTo($this.parent()).draggable({
       start: function(ui, event) {
         console.log("Drag Started");
