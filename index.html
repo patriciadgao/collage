@@ -111,7 +111,7 @@
 	</div>
   </div>
 <script>
-	$( ".d" ).draggable();
+	$( ".d" ).draggable({containment: "parent"});
 $(function() {
   var bowl = $(".bowl");
 
@@ -133,9 +133,7 @@ $(function() {
       top: event.pageY - 25,
       position: "absolute"
     }).appendTo($this.parent()).draggable({
-      start: function(ui, event) {
-        console.log("Drag Started");
-      }
+      containment: "parent"
     });
     $stone.trigger(event);
   });
