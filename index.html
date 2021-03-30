@@ -77,11 +77,30 @@
     0% {background-position: 0%}
     100% {background-position: 100%}
 }
+	  
+	  .bowl {
+  position: fixed;
+  background: #666;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  left: -50px;
+  top: -50px;
+}
+
+.stone {
+  position: absolute;
+  background: #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
+	<div class="bowl"></div>
   <div id="container" class="box">
 	<div class='blackbox'>
   <div id="draggable" class="d orange block"></div>
@@ -105,23 +124,31 @@
   </div>
 <script>
 $(function() {
-  var starter = $(".starter");
+  var bowl = $(".bowl");
 
-  starter.droppable({
-    accept: ".block",
+  bowl.droppable({
+    accept: ".stone",
     greedy: true,
     drop: function(event, ui) {
       ui.draggable.detach();
     }
   });
 
-  starter.on('mousedown', function(event) {
+  bowl.on('mousedown', function(event) {
     var $this = $(this);
-    var $block = $('<div>', {
-      class: "grad block",
-      id: "block-" + ($(".block").length + 1)
-    }).appendTo($this.parent()).draggable();
-    $block.trigger(event);
+    var $stone = $('<div>', {
+      class: "stone",
+      id: "stone-" + ($(".stone").length + 1)
+    }).css({
+      left: event.pageX - 25,
+      top: event.pageY - 25,
+      position: "absolute"
+    }).appendTo($this.parent()).draggable({
+      start: function(ui, event) {
+        console.log("Drag Started");
+      }
+    });
+    $stone.trigger(event);
   });
 });
 </script>
