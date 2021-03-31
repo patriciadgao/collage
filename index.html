@@ -93,7 +93,7 @@ $(function() {
   var gen = $(".purple .block .gen");
 
   gen.droppable({
-    accept: ".purple .block .new",
+    accept: ".orange .block .new",
     greedy: true,
     drop: function(event, ui) {
       ui.draggable.detach();
@@ -103,7 +103,7 @@ $(function() {
   gen.on('mousedown', function(event) {
     var $this = $(this);
     var $block = $('<div>', {
-      class: "purple block new",
+      class: "orange block new",
       id: "block-" + ($(".block").length + 1)
     }).css({
       left: event.pageX - 25,
