@@ -93,7 +93,7 @@ $(function() {
   var gen = $(".purple .block .gen");
 
   gen.droppable({
-    accept: ".stone",
+    accept: ".purple .block .new",
     greedy: true,
     drop: function(event, ui) {
       ui.draggable.detach();
