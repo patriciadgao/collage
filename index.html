@@ -82,7 +82,7 @@
 <body>
   <div id="container" class="box">
 	<div class='blackbox'>
-  <div id='purple gen' class='purple block gen'></div>
+  <div id='gen1' class='grad block gen'></div>
 	</div>
 	<div class='graybox'>
 	</div>
@@ -90,7 +90,7 @@
 <script>
 	$( ".d" ).draggable({containment: ".box", stack: ".d"});
 $(function() {
-  var gen = $(".purple .block .gen");
+  var gen = $(".grad .block .gen");
 
   gen.droppable({
     accept: ".orange .block .new",
