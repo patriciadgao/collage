@@ -71,18 +71,9 @@
     0% {background-position: 0%}
     100% {background-position: 100%}
 }
-	  
-	  .bowl {
-  background: lightblue;
-  width: 50px;
-  height: 50px;
-}
 
-.stone {
+.new {
   position: absolute;
-  background: #ba3ef6;
-  width: 50px;
-  height: 50px;
 }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -91,31 +82,17 @@
 <body>
   <div id="container" class="box">
 	<div class='blackbox'>
-  <div id="draggable" class="d orange block"></div>
-  <div id="draggable2" class="d purple block"></div>
-  <div id="draggable3" class="d orange block"></div>
-  <div id="draggable4" class="d purple block"></div>
-  <div id="draggable5" class="d orange rectangle1"></div>
-  <div id="draggable6" class="d purple rectangle1"></div>
-  <div id="draggable7" class="d orange rectangle2"></div>
-  <div id="draggable8" class="d purple rectangle2"></div>
-  <div id="draggable9" class="d grad block"></div>
-  <div id="draggable10" class="d grad block"></div>
-	<div id="draggable11" class="d grad1 block"></div>
-  <div id="draggable10" class="d grad block1"></div>
-	<div id="draggable12" class="d grad2 block"></div>
-  <div id="draggable10" class="d grad block2"></div>
+  <div id='purple gen' class='purple block gen'></div>
 	</div>
 	<div class='graybox'>
-		<div class="bowl"></div>
 	</div>
   </div>
 <script>
 	$( ".d" ).draggable({containment: ".box", stack: ".d"});
 $(function() {
-  var bowl = $(".bowl");
+  var gen = $(".purple .block .gen");
 
-  bowl.droppable({
+  gen.droppable({
     accept: ".stone",
     greedy: true,
     drop: function(event, ui) {
@@ -123,11 +100,11 @@ $(function() {
     }
   });
 
-  bowl.on('mousedown', function(event) {
+  gen.on('mousedown', function(event) {
     var $this = $(this);
-    var $stone = $('<div>', {
-      class: "stone",
-      id: "stone-" + ($(".stone").length + 1)
+    var $block = $('<div>', {
+      class: "purple block new",
+      id: "block-" + ($(".block").length + 1)
     }).css({
       left: event.pageX - 25,
       top: event.pageY - 25,
@@ -135,7 +112,7 @@ $(function() {
     }).appendTo($this.parent()).draggable({
       containment: ".box"
     });
-    $stone.trigger(event);
+    $block.trigger(event);
   });
 });
 </script>
