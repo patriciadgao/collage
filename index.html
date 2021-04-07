@@ -6,21 +6,43 @@
 	<script src="jquery.ui.touch-punch.min.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <style>
-    .block {
-      width: 50px;
+    .small {
       height: 50px;
+      width: 50px;
     }
-    
-    .rectangle1 {
-      width: 20px;
+
+    .medium {
       height: 75px;
-	    margin: 10px;
-    }
-    
-    .rectangle2 {
       width: 75px;
-      height: 20px;
-	    margin: 10px;
+    }
+
+    .large {
+      height: 100px;
+      width: 100px;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    .triangle {
+      width: 0 !important;
+      height: 0 !important;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent; 
+      .red {
+        border-bottom: 50px solid #c92121;
+      }
+      .grad {
+        border-bottom: 50px solid linear-gradient(#e9582b, #ba3ef6);
+      }
+    }
+
+    .parallelogram {
+      width: 100px;
+      height: 50px;
+      transform: skew(20deg);
+      background: #555;
     }
 
     .orange {
@@ -30,93 +52,87 @@
     .purple {
       background: #ba3ef6;
 	  }
+
+    .red {
+      background: #c92121;
+    }
+
+    .pink {
+      background: #d34c8b
+    }
 	  
-	  .grad1 {
+	  .grad {
 		  background-image: linear-gradient(#e9582b, #ba3ef6);
 	  }
 	  
-	  .grad2 {
-		  background-image: linear-gradient(#ba3ef6, #e9582b);
-	  }
-    .graybox {
-      width: 500px;
-      height: 500px;
-      background: #f5f5f5;
-    }
-	 
-	.blackbox {
-		width: 200px;
-		height: 500px;
-		background: #525252;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+	  .grad-pink {
+		  background-image: linear-gradient(#d04b98, #c92121);
 	  }
     
+    .grad-move {
+  	  background-image: linear-gradient(45deg, #e9582b , #ba3ef6);
+  	  background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+      animation-direction: alternate;
+    }
+
+    .grad-move-pink {
+      background-image: linear-gradient(45deg, #d04b98 , #e92121);
+      background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0%}
+      100% {background-position: 100%}
+    }
+
+    .whitebox {
+      width: 500px;
+      height: 500px;
+      background: white;
+    }
+
+    .sidebar {
+      background: #f5f5f5;
+      width: 200px;
+      height: 500px;
+    }
+
     .box {
       display: flex;
       align-items: center;
       justify-content: center;
-	margin-top: 20px;
+      margin-top: 20px;
     }
-    
-    .grad {
-	  background-image: linear-gradient(to right, #e9582b , #ba3ef6);
-	  background-size: 200% 100%;
-    animation: gradient 3s linear infinite;
-    animation-direction: alternate;
-}
-@keyframes gradient {
-    0% {background-position: 0%}
-    100% {background-position: 100%}
-}
-	  
-	  .bowl {
-  width: 50px;
-  height: 50px;
-		  margin: 10px;
-}
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
   <div id="container" class="box">
-	<div class='blackbox'>
-		<div class="grad bowl"></div>
-	</div>
-	<div class='graybox'>
-	</div>
+    <div class='sidebar'>
+      <div class='d red triangle'></div>
+      <div class='d grad triangle'></div>
+      <div class='d grad-move small'></div>
+      <div class='d grad-move-pink large'></div>
+      <div class='d pink small circle'></div>
+      <div class='d purple large circle'></div>
+    </div>
+    <div class='whitebox'>
+    </div>
+    <div class='sidebar'>
+      <div class='d orange medium circle'></div>
+      <div class='d orange large'></div>
+      <div class='d grad medium'></div>
+      <div class='d grad-pink small circle'></div>
+      <div class='d pink small'></div>
+      <div class='d purple medium circle'></div>
+    </div>
   </div>
 <script>
 	$( ".d" ).draggable({containment: ".box", stack: ".d"});
-$(function() {
-  var bowl = $(".bowl");
-
-  bowl.droppable({
-    accept: ".grad .block",
-    greedy: true,
-    drop: function(event, ui) {
-      ui.draggable.detach();
-    }
-  });
-
-  bowl.on('mousedown', function(event) {
-    var $this = $(this);
-    var $block = $('<div>', {
-      class: "grad block",
-      id: "block-" + ($(".grad .block").length + 1)
-    }).css({
-      left: event.pageX - 25,
-      top: event.pageY - 25,
-      position: "absolute"
-    }).appendTo($this.parent()).draggable({
-      containment: ".box"
-    });
-    $block.trigger(event);
-  });
-});
 </script>
- 
 </body>
 </html>
