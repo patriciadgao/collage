@@ -106,13 +106,20 @@
     .sidebar {
       background: #f5f5f5;
       width: 190px;
-      height: 500px;
 	display: flex;
 	    align-items: center;
 	    justify-content: space-evenly;
 	    align-content: space-evenly;
 	    flex-wrap: wrap;
     }
+	  
+	  .sidebar.left {
+		  height: 500px;
+	  }
+	  
+	  .sidebar.right {
+		  height: 540px;
+	  }
 
     .box {
       display: flex;
@@ -123,8 +130,10 @@
 
     .e {
       color: #ababab;
+	    background: #cccccc;
       font-family: Helvetica, Arial, sans-serif;
 	    text-align: center;
+	    padding-top: 25px;
 	    height: 60px;
     }
 
@@ -132,11 +141,6 @@
       font-weight: bold;
       color: #808080;
     }
-	  
-	  .sidebar-holder {
-		  background: #cccccc;
-	  }
-	  
 	  button {
 		  padding: 10px;
 		  border-radius: 5px;
@@ -149,13 +153,17 @@
 				background-color: #e9582b;  
 			  cursor: pointer;
 		  }
+	  .buttonholder {
+		  display: flex;
+		  align-items: center;
+	  }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
   <div id="container" class="box">
-    <div class='sidebar'>
+    <div class='sidebar left'>
       <div class='d redtriangle'></div>
       <div class='d pinktriangle'></div>
       <div class='d orangetriangle'></div>
@@ -169,8 +177,7 @@
     </div>
     <div class='whitebox'>
     </div>
-	  <div class='sidebar-holder'>
-    <div class='sidebar'>
+    <div class='sidebar right'>
       <div class='d orange medium circle'></div>
       <div class='d orange large'></div>
       <div class='d grad medium'></div>
@@ -181,10 +188,11 @@
       <div class='d purple medium circle'></div>
     </div>
 		  <div class='e'>Drag here to remove</div>
-	  </div>
   </div>
+	<div class='buttonholder'>
   <button onclick='window.location.reload()'>Add a shape!</button>
   <button onclick='window.location.reload()'>Start over</button>
+	</div>
 <script>
   $( ".e" ).droppable({accept: ".d", activeClass: "active-drop", drop: function(event, ui) {
     ui.draggable.remove();
