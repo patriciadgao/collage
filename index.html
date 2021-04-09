@@ -106,6 +106,7 @@
     .sidebar {
       background: #f5f5f5;
       width: 190px;
+      min-height: 500px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -115,6 +116,7 @@
 
     .box {
       display: flex;
+      flex-direction: row;
       align-items: stretch;
       justify-content: center;
       margin-top: 20px;
@@ -210,6 +212,7 @@
       className = className + ' ' + colorClass[Math.floor(Math.random()*colorClass.length)];
       className = className + ' ' + sizeShapeClass[Math.floor(Math.random()*sizeShapeClass.length)];
       this.div.className = className;
+      this.div.draggable({containment: ".box", stack: ".d"});
     }
   </script>
 </body>
