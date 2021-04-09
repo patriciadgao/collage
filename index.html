@@ -123,6 +123,12 @@
 
     .e {
       color: #adadad;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .active-drop {
+      font-weight: bold;
+      color: #7d7d7d;
     }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -139,6 +145,8 @@
       <div class='d grad-move-pink large'></div>
       <div class='d pink small circle'></div>
       <div class='d purple large circle'></div>
+	<div class='d grad-move-pink small circle'></div>
+      <div class='d grad-move medium'></div>
     </div>
     <div class='whitebox'>
     </div>
@@ -157,7 +165,9 @@
   <button onclick='window.location.reload()'>Add a shape!</button>
   <button onclick='window.location.reload()'>Start over</button>
 <script>
-  $( ".e" ).droppable({accept: ".d"})
+  $( ".e" ).droppable({accept: ".d", activeClass: ".active-drop", drop: function(event, ui) {
+    ui.draggable.remove();
+  }});
 	$( ".d" ).draggable({containment: ".box", stack: ".d"});
 </script>
 </body>
