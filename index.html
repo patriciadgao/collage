@@ -60,7 +60,7 @@
 
     .purple {
       background: #ba3ef6;
-	  }
+    }
 
     .red {
       background: #c92121;
@@ -69,18 +69,18 @@
     .pink {
       background: #d34c8b;
     }
-	  
-	  .grad {
-		  background-image: linear-gradient(#e9582b, #ba3ef6);
-	  }
-	  
-	  .grad-pink {
-		  background-image: linear-gradient(#d04b98, #c92121);
-	  }
+    
+    .grad {
+      background-image: linear-gradient(#e9582b, #ba3ef6);
+    }
+    
+    .grad-pink {
+      background-image: linear-gradient(#d04b98, #c92121);
+    }
     
     .grad-move {
-  	  background-image: linear-gradient(45deg, #e9582b , #ba3ef6);
-  	  background-size: 200% 100%;
+      background-image: linear-gradient(45deg, #e9582b , #ba3ef6);
+      background-size: 200% 100%;
       animation: gradient 3s linear infinite;
       animation-direction: alternate;
     }
@@ -106,20 +106,20 @@
     .sidebar {
       background: #f5f5f5;
       width: 190px;
-	display: flex;
-	    align-items: center;
-	    justify-content: space-evenly;
-	    align-content: space-evenly;
-	    flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      align-content: space-evenly;
+      flex-wrap: wrap;
     }
-	  
-	  .left {
-		  height: 500px;
-	  }
-	  
-	  .right {
-		  height: 540px;
-	  }
+    
+    .left {
+      height: 500px;
+    }
+    
+    .right {
+      height: 540px;
+    }
 
     .box {
       display: flex;
@@ -130,34 +130,35 @@
 
     .e {
       color: #ababab;
-	    background: #cccccc;
+      background: #cccccc;
       font-family: Helvetica, Arial, sans-serif;
-	    text-align: center;
-	    padding-top: 25px;
-	    height: 60px;
+      text-align: center;
+      padding-top: 25px;
+      height: 60px;
     }
 
     .active-drop {
       font-weight: bold;
       color: #808080;
     }
-	  button {
-		  padding: 10px;
-		  border-radius: 5px;
-		  background-color: #d34c8b;	 
-		  border: none;
-		  text-decoration: none;
-	  }
-	  
-	  	  button:hover {
-				background-color: #e9582b;  
-			  cursor: pointer;
-		  }
-	  .buttonholder {
-		  display: flex;
-		  align-items: center;
-		  align-content: space-evenly;
-	  }
+
+    button {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #c92121;   
+      border: none;
+      text-decoration: none;
+    }
+    
+    button:hover {
+      background-color: #e9582b;  
+      cursor: pointer;
+    }
+    .buttonholder {
+      display: flex;
+      align-items: center;
+      align-content: space-evenly;
+    }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -173,7 +174,7 @@
       <div class='d grad-move-pink large'></div>
       <div class='d pink small circle'></div>
       <div class='d purple large circle'></div>
-	<div class='d grad-move-pink small circle'></div>
+      <div class='d grad-move-pink small circle'></div>
       <div class='d grad-move medium'></div>
     </div>
     <div class='whitebox'>
@@ -188,17 +189,22 @@
       <div class='d pink small'></div>
       <div class='d purple medium circle'></div>
     </div>
-		  <div class='e'>Remove</div>
+    <div class='e'>Remove</div>
   </div>
-	<div class='buttonholder'>
-  <button onclick='window.location.reload()'>Add a shape!</button>
-  <button onclick='window.location.reload()'>Start over</button>
-	</div>
-<script>
-  $( ".e" ).droppable({accept: ".d", activeClass: "active-drop", drop: function(event, ui) {
-    ui.draggable.remove();
-  }});
-	$( ".d" ).draggable({containment: ".box", stack: ".d"});
-</script>
+  <div class='buttonholder'>
+    <button onclick='new CollageObject()'>Add a shape!</button>
+    <button onclick='window.location.reload()'>Start over</button>
+  </div>
+  <script>
+    $( ".e" ).droppable({accept: ".d", activeClass: "active-drop", drop: function(event, ui) {
+      ui.draggable.remove();
+    }});
+    $( ".d" ).draggable({containment: ".box", stack: ".d"});
+    CollageObject = function() {
+      this.div = document.createElement( "div" );
+      document.getElementById( 'container' ).appendChild( this.div );
+      this.div.className = 'd orange medium circle';
+    }
+  </script>
 </body>
 </html>
