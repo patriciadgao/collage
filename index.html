@@ -113,11 +113,11 @@
 	    flex-wrap: wrap;
     }
 	  
-	  .sidebar.left {
+	  .left {
 		  height: 500px;
 	  }
 	  
-	  .sidebar.right {
+	  .right {
 		  height: 540px;
 	  }
 
@@ -156,6 +156,7 @@
 	  .buttonholder {
 		  display: flex;
 		  align-items: center;
+		  align-content: space-evenly;
 	  }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -187,7 +188,7 @@
       <div class='d pink small'></div>
       <div class='d purple medium circle'></div>
     </div>
-		  <div class='e'>Drag here to remove</div>
+		  <div class='e'>Remove</div>
   </div>
 	<div class='buttonholder'>
   <button onclick='window.location.reload()'>Add a shape!</button>
