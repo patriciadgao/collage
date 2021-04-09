@@ -23,12 +23,28 @@
       border-radius: 50%;
     }
 
-    .triangle {
+    .redtriangle {
       width: 0;
       height: 0;
       border-left: 25px solid transparent;
       border-right: 25px solid transparent; 
       border-bottom: 50px solid #c92121;
+    }
+
+    .pinktriangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent; 
+      border-bottom: 100px solid #d34c8b;
+    }
+
+    .orangetriangle {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent; 
+      border-bottom: 60px solid #e9582b;
     }
 
     .parallelogram {
@@ -51,7 +67,7 @@
     }
 
     .pink {
-      background: #d34c8b
+      background: #d34c8b;
     }
 	  
 	  .grad {
@@ -104,6 +120,10 @@
       justify-content: center;
       margin-top: 20px;
     }
+
+    .e {
+      color: #adadad;
+    }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -111,7 +131,9 @@
 <body>
   <div id="container" class="box">
     <div class='sidebar'>
-      <div class='d triangle'></div>
+      <div class='d redtriangle'></div>
+      <div class='d pinktriangle'></div>
+      <div class='d orangetriangle'></div>
       <div class='d grad large'></div>
       <div class='d grad-move small'></div>
       <div class='d grad-move-pink large'></div>
@@ -129,9 +151,13 @@
       <div class='d grad-move large circle'></div>
       <div class='d pink small'></div>
       <div class='d purple medium circle'></div>
+      <div class='e'>Drag here to remove</div>
     </div>
   </div>
+  <button onclick='window.location.reload()'>Add a shape!</button>
+  <button onclick='window.location.reload()'>Start over</button>
 <script>
+  $( ".e" ).droppable({accept: ".d"})
 	$( ".d" ).draggable({containment: ".box", stack: ".d"});
 </script>
 </body>
