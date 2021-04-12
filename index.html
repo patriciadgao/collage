@@ -106,7 +106,7 @@
     .sidebar {
       background: #f5f5f5;
       width: 190px;
-      min-height: 500px;
+      height: 500px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -117,7 +117,7 @@
     .box {
       display: flex;
       flex-direction: row;
-      align-items: stretch;
+      align-items: center;
       justify-content: center;
       margin-top: 20px;
     }
@@ -178,14 +178,6 @@
     </div>
     <div>
     <div class='sidebar right'>
-      <div class='d orange medium circle'></div>
-      <div class='d orange large'></div>
-      <div class='d grad medium'></div>
-      <div class='d grad-pink small circle'></div>
-      <div class='d grad-move-pink medium circle'></div>
-      <div class='d grad-move large circle'></div>
-      <div class='d pink small'></div>
-      <div class='d purple medium circle'></div>
     </div>
     <div class='e'>Remove</div>
   </div>
@@ -214,7 +206,7 @@
       className = className + ' ' + colorClass[Math.floor(Math.random()*colorClass.length)];
       className = className + ' ' + sizeShapeClass[Math.floor(Math.random()*sizeShapeClass.length)];
       this.div.className = className;
-      this.div.draggable({containment: ".box", stack: ".d"});
+      $( ".d" ).draggable({containment: ".box", stack: ".d"});
     }
   </script>
 </body>
