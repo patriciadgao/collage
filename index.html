@@ -142,7 +142,7 @@
     
     .f {
       padding: 10px;
-      background-color: paleturquoise;
+      background-color: palegreen;
       font-family: Helvetica, Arial, sans-serif;
       text-align: center;
     }
@@ -249,6 +249,11 @@
       var $item = $('<div>', {
         class: className,
         id: "item-" + ($('.d').length + 1)
+      }).css({
+        left: event.pageX,
+        top: event.pageY,
+        position: 'absolute',
+        transform: 'translate(-50%, -50%)'
       }).appendTo($this.parent());
         $item.trigger(event);
                 $('.d').draggable({containment: '.box', stack: '.d'});
