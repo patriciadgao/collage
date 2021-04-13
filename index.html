@@ -139,6 +139,13 @@
       padding-top: 25px;
       min-height: 60px;
     }
+    
+    .f {
+      padding: 10px;
+      background-color: pink;
+      font-family: Helvetica, Arial, sans-serif;
+      text-align: center;
+    }
 
     .active-drop {
       font-weight: bold;
@@ -192,6 +199,7 @@
     </div>
     <div>
     <div class='sidebar right'>
+            <div class='f' id='creator'>Add</div>
     </div>
     <div class='e'>Remove</div>
   </div>
@@ -221,7 +229,31 @@
       className = className + ' ' + sizeShapeClass[Math.floor(Math.random()*sizeShapeClass.length)];
       this.div.className = className;
       $( ".d" ).draggable({containment: ".box", stack: ".d"});
-    }
+    };
+    $(function() {
+      var creator = $('.creator');
+      
+      creator.on('mousedown', function(event) {
+        var $this = $(this);
+        let className = 'd';
+      let colorClass = [
+        'orange', 'purple', 'red', 'pink',
+        'grad', 'grad-pink', 'grad-move', 'grad-move-pink'
+      ];
+      let sizeShapeClass = [
+        'small circle', 'medium circle', 'large circle',
+        'small', 'medium', 'large'
+      ];
+      className = className + ' ' + colorClass[Math.floor(Math.random()*colorClass.length)];
+      className = className + ' ' + sizeShapeClass[Math.floor(Math.random()*sizeShapeClass.length)];
+      var $item = $('<div>', {
+        class: className,
+        id: "item-" + ($('.d').length + 1)
+      }).appendTo($this.parent());
+        $item.trigger(event);
+                $('.d').draggable({containment: '.box', stack: '.d'});
+      });
+    });
   </script>
 </body>
 </html>
