@@ -142,7 +142,7 @@
     
     .f {
       padding: 10px;
-      background-color: navajowhite;
+      background-color: rosybrown;
       font-family: Helvetica, Arial, sans-serif;
       text-align: center;
     }
@@ -252,7 +252,8 @@
       }).css({
         left: event.pageX,
         top: event.pageY,
-        position: 'absolute'
+        position: 'absolute',
+        transform: 'translate(-25%, -25%)'
       }).appendTo($this.parent());
         $item.trigger(event);
                 $('.d').draggable({containment: '.box', stack: '.d'});
