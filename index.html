@@ -190,7 +190,7 @@
       border-style: solid;
       border-color: white;
       border-width: 2px;
-      background-color: transparent;   
+      background-color: green;   
       text-decoration: none;
       color: white;
       font-family: Helvetica, Arial, sans-serif;
@@ -332,6 +332,7 @@
       });
     $('.d').mousedown(function(e) {
       if (e.which === 3) {
+        e.preventDefault();
         $(this).toggleClass('editing');
       };
     });
