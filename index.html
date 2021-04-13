@@ -98,6 +98,41 @@
       animation: gradient 3s linear infinite;
       animation-direction: alternate;
     }
+    
+    .grad-move-purple {
+      background-image: linear-gradient(45deg, #d04b98 , #ba3ef6);
+      background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-fast-pink {
+      background-image: linear-gradient(45deg, #d04b98 , #e92121);
+      background-size: 200% 100%;
+      animation: gradient 2s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-fast-purple {
+      background-image: linear-gradient(45deg, #ba3ef6 , #d04b98);
+      background-size: 200% 100%;
+      animation: gradient 2s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-fast-orange {
+      background-image: linear-gradient(45deg, #ba3ef6 , #e9582b);
+      background-size: 200% 100%;
+      animation: gradient 2s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-fast-red {
+      background-image: linear-gradient(45deg, #c92121 , #ba3ef6);
+      background-size: 200% 100%;
+      animation: gradient 2s linear infinite;
+      animation-direction: alternate;
+    }
 
     @keyframes gradient {
       0% {background-position: 0%}
@@ -223,7 +258,9 @@
         let className = 'd';
         let colorClass = [
         'orange', 'purple', 'red', 'pink',
-        'grad', 'grad-pink', 'grad-move', 'grad-move-pink'
+        'grad', 'grad-pink', 'grad-move', 'grad-move-pink', 'grad-move-purple',
+          'grad-move-fast-pink', 'grad-move-fast-purple', 'grad-move-fast-orange',
+          'grad-move-fast-red'
         ];
         let sizeShapeClass = [
         'small circle', 'medium circle', 'large circle',
