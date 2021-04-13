@@ -150,13 +150,18 @@
       min-height: 500px;
       background: rgb(255, 255, 255, 0.2);
     }
+    
+    .boxbox {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
     .box {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin-top: 20px;
       position: relative;
     }
 
@@ -184,8 +189,8 @@
       border-radius: 10px;
       border-style: solid;
       border-color: white;
-      border-width: thin;
-      background-color: blue;   
+      border-width: 2px;
+      background-color: palegoldenrod;   
       text-decoration: none;
       color: white;
       font-family: Helvetica, Arial, sans-serif;
@@ -208,6 +213,7 @@
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
+  <div class='boxbox'>
   <div id="container" class="box">
     <div class='sidebar left f' id='creator'>
       <div class='textbox'>
@@ -223,6 +229,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
   <div class='buttonholder'>
     <!--
