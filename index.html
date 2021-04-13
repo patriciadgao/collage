@@ -194,7 +194,6 @@
       text-decoration: none;
       color: white;
       font-family: Helvetica, Arial, sans-serif;
-      font-weight: bold;
       margin: 10px;
       outline: none;
     }
@@ -209,6 +208,12 @@
       text-align: center;
       justify-content: center;
       margin-top: 10px;
+    }
+
+    .editing {
+      border-style: solid;
+      border-color: lightskyblue;
+      border-width: 2px;
     }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
@@ -325,6 +330,9 @@
           }
         });
       });
+    $('.d').click(function() {
+    $(this).toggleClass('editing');
+});
     </script>
   </body>
   </html>
