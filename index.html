@@ -271,7 +271,10 @@
               left: event.pageX - 50,
               top: event.pageY - 50,
               position: 'absolute'
-            }).appendTo($this.parent());
+            }).appendTo($this.parent()).draggable({
+              containment: ".box",
+              stack: ".d"
+            });
             $item.trigger(event);
             $('.d').draggable({containment: '.box', stack: '.d'});
           }
