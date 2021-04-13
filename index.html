@@ -124,18 +124,18 @@
     }
 
     .e {
-      color: #ababab;
-      background: #cccccc;
-      font-family: Helvetica, Arial, sans-serif;
-      text-align: center;
-      vertical-align: center;
+      vetical-align: center;
     }
     
     .f {
-      font-family: Helvetica, Arial, sans-serif;
-      text-align: center;
       vertical-align: middle;
-      background: pink;
+    }
+    
+    .textbox {
+      text-align: center;
+      font-family: Helvetica, Arial, sans-serif;
+      color: white;
+      font-weight: bold;
     }
 
     .active-drop {
@@ -174,13 +174,17 @@
 <body>
   <div id="container" class="box">
     <div class='sidebar left f' id='creator'>
-      Drag to add
+      <div class='textbox'>
+        Drag to add
+      </div>
     </div>
     <div class='whitebox'>
     </div>
     <div>
       <div class='sidebar right c'>
-        Drag to remove
+        <div class='textbox'>
+          Drag to remove
+        </div>
       </div>
     </div>
   </div>
@@ -235,9 +239,11 @@
               left: event.pageX - 25,
               top: event.pageY - 25,
               position: 'absolute'
-            }).appendTo($this.parent());
+            }).appendTo($this.parent()).draggable({
+              containment: ".box",
+              stack: ".d"
+            });
             $item.trigger(event);
-            $('.d').draggable({containment: '.box', stack: '.d'});
           } else if (sizeThing === 'medium') {
             var $item = $('<div>', {
               class: className,
@@ -246,9 +252,11 @@
               left: event.pageX - 37.5,
               top: event.pageY - 37.5,
               position: 'absolute'
-            }).appendTo($this.parent());
+            }).appendTo($this.parent()).draggable({
+              containment: ".box",
+              stack: ".d"
+            });
             $item.trigger(event);
-            $('.d').draggable({containment: '.box', stack: '.d'});
           } else {
             var $item = $('<div>', {
               class: className,
