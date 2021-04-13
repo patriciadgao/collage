@@ -166,10 +166,6 @@
       text-align: center;
       justify-content: center;
     }
-    
-    .d {
-      position: relative
-    }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -243,6 +239,7 @@
             }).css({
               left: event.pageX - 25,
               top: event.pageY - 25,
+              position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
               stack: ".d"
@@ -255,6 +252,7 @@
             }).css({
               left: event.pageX - 37.5,
               top: event.pageY - 37.5,
+              position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
               stack: ".d"
@@ -267,6 +265,7 @@
             }).css({
               left: event.pageX - 50,
               top: event.pageY - 50,
+              position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
               stack: ".d"
