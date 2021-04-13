@@ -190,7 +190,7 @@
       border-style: solid;
       border-color: white;
       border-width: 2px;
-      background-color: green;   
+      background-color: wheat;   
       text-decoration: none;
       color: white;
       font-family: Helvetica, Arial, sans-serif;
@@ -330,12 +330,11 @@
           }
         });
       });
-    $('.d').mousedown(function(e) {
-      if (e.which === 3) {
-        e.preventDefault();
-        $(this).toggleClass('editing');
-      };
-    });
+     $(".d").bind('contextmenu', function (e) {
+       $(this).toggleClass('editing');
+  // disable default context menu
+  return false;
+ });
     </script>
   </body>
   </html>
