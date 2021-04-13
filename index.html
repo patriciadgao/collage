@@ -190,7 +190,7 @@
       border-style: solid;
       border-color: white;
       border-width: 2px;
-      background-color: mistyrose;   
+      background-color: powderblue;   
       text-decoration: none;
       color: white;
       font-family: Helvetica, Arial, sans-serif;
@@ -264,7 +264,7 @@
       
       creator.on('mousedown', function(event) {
         var $this = $(this);
-        var position = $('#creator').position();
+        var position = $('#creator').offset();
         var positionLeft = position.left;
         var positionTop = position.top;
         let className = 'd';
@@ -312,8 +312,8 @@
               class: className,
               id: "item-" + ($('.d').length + 1)
             }).css({
-              left: event.pageX - 50,
-              top: event.pageY - 50,
+              left: event.pageX - positionLeft - 50,
+              top: event.pageY - positionTop - 50,
               position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
