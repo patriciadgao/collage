@@ -247,7 +247,8 @@
               id: "item-" + ($('.d').length + 1)
             }).css({
               left: event.pageX - 25,
-              top: event.pageY - 25
+              top: event.pageY - 25,
+              position: 'absolute'
             }).appendTo($this.parent());
             $item.trigger(event);
             $('.d').draggable({containment: '.box', stack: '.d'});
@@ -257,7 +258,8 @@
               id: "item-" + ($('.d').length + 1)
             }).css({
               left: event.pageX - 37.5,
-              top: event.pageY - 37.5
+              top: event.pageY - 37.5,
+              position: 'absolute'
             }).appendTo($this.parent());
             $item.trigger(event);
             $('.d').draggable({containment: '.box', stack: '.d'});
@@ -267,7 +269,8 @@
               id: "item-" + ($('.d').length + 1)
             }).css({
               left: event.pageX - 50,
-              top: event.pageY - 50
+              top: event.pageY - 50,
+              position: 'absolute'
             }).appendTo($this.parent());
             $item.trigger(event);
             $('.d').draggable({containment: '.box', stack: '.d'});
