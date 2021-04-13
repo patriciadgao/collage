@@ -241,7 +241,7 @@
       className = className + ' ' + colorClass[Math.floor(Math.random()*colorClass.length)];
       className = className + ' ' + sizeShapeClass[Math.floor(Math.random()*sizeShapeClass.length)];
       let itemName = "item-" + ($('.d').length + 1);
-      let sizeThing = if (classSName.includes('small')) ? 'small' : if (className.includes('medium') ? 'medium' : 'large';
+      let sizeThing = (classSName.includes('small')) ? 'small' : (className.includes('medium') ? 'medium' : 'large';
                                                                         if (sizeThing === 'small') {
         var $item = $('<div>', {
         class: className,
