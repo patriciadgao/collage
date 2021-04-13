@@ -142,7 +142,7 @@
     
     .f {
       padding: 10px;
-      background-color: blue;
+      background-color: plum;
       font-family: Helvetica, Arial, sans-serif;
       text-align: center;
     }
@@ -250,8 +250,8 @@
         class: className,
         id: "item-" + ($('.d').length + 1)
       }).css({
-        left: event.pageX - ($this.width() * 0.25),
-        top: event.pageY - ($this.height() * 0.25),
+        left: event.pageX - 25,
+        top: event.pageY - 25,
         position: 'absolute'
       }).appendTo($this.parent());
         $item.trigger(event);
