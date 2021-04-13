@@ -142,7 +142,7 @@
     
     .f {
       padding: 10px;
-      background-color: green;
+      background-color: lightskyblue;
       font-family: Helvetica, Arial, sans-serif;
       text-align: center;
     }
@@ -241,16 +241,38 @@
       className = className + ' ' + colorClass[Math.floor(Math.random()*colorClass.length)];
       className = className + ' ' + sizeShapeClass[Math.floor(Math.random()*sizeShapeClass.length)];
       let itemName = "item-" + ($('.d').length + 1);
-      var $item = $('<div>', {
+      let sizeThing = if (classSName.includes('small')) ? 'small' : if (className.includes('medium') ? 'medium' : 'large';
+                                                                        if (sizeThing === 'small') {
+        var $item = $('<div>', {
         class: className,
         id: itemName
-      }).appendTo($this.parent());
-        $item.css({
-          left: event.pageX - $(itemName).width()/2,
-          top: event.pageY - $(itemName).height()/2
-        });
+      }).css({
+          left: event.pageX - 25,
+          top: event.pageY - 25
+        }).appendTo($this.parent());
         $item.trigger(event);
                 $('.d').draggable({containment: '.box', stack: '.d'});
+      } else if (sizeThing === 'medium') {
+        var $item = $('<div>', {
+        class: className,
+        id: itemName
+      }).css({
+          left: event.pageX - 37.5,
+          top: event.pageY - 37.5
+        }).appendTo($this.parent());
+        $item.trigger(event);
+                $('.d').draggable({containment: '.box', stack: '.d'});
+      } else {
+        var $item = $('<div>', {
+        class: className,
+        id: itemName
+      }).css({
+          left: event.pageX - 50,
+          top: event.pageY - 50
+        }).appendTo($this.parent());
+        $item.trigger(event);
+                $('.d').draggable({containment: '.box', stack: '.d'});
+      }
       });
     });
   </script>
