@@ -142,7 +142,7 @@
     
     .f {
       padding: 10px;
-      background-color: hotpink;
+      background-color: green;
       font-family: Helvetica, Arial, sans-serif;
       text-align: center;
     }
@@ -244,11 +244,11 @@
       var $item = $('<div>', {
         class: className,
         id: itemName
-      }).appendTo($this.parent()).css({
-        left: event.pageX + ($(itemName).width()/2),
-        top: event.pageY + ($(itemName).height()/2),
-        position: 'absolute'
-      });
+      }).appendTo($this.parent());
+        $item.css({
+          left: event.pageX - $(itemName).width()/2,
+          top: event.pageY - $(itemName).height()/2
+        });
         $item.trigger(event);
                 $('.d').draggable({containment: '.box', stack: '.d'});
       });
