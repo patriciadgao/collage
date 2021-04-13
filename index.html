@@ -190,7 +190,7 @@
       border-style: solid;
       border-color: white;
       border-width: 2px;
-      background-color: palegoldenrod;   
+      background-color: mintcream;   
       text-decoration: none;
       color: white;
       font-family: Helvetica, Arial, sans-serif;
@@ -283,8 +283,8 @@
               class: className,
               id: "item-" + ($('.d').length + 1)
             }).css({
-              left: event.pageX - 25,
-              top: event.pageY - 25,
+              left: event.pageX - $this.position().left - 25,
+              top: event.pageY - $this.position().top - 25,
               position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
@@ -296,8 +296,8 @@
               class: className,
               id: "item-" + ($('.d').length + 1)
             }).css({
-              left: event.pageX - 37.5,
-              top: event.pageY - 37.5,
+              left: event.pageX - $this.position().left - 37.5,
+              top: event.pageY - $this.position().top - 37.5,
               position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
@@ -309,8 +309,8 @@
               class: className,
               id: "item-" + ($('.d').length + 1)
             }).css({
-              left: event.pageX - 50,
-              top: event.pageY - 50,
+              left: event.pageX - $this.position().left - 50,
+              top: event.pageY - $this.position().top - 50,
               position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
