@@ -190,7 +190,7 @@
       border-style: solid;
       border-color: white;
       border-width: 2px;
-      background-color: mintcream;   
+      background-color: mistyrose;   
       text-decoration: none;
       color: white;
       font-family: Helvetica, Arial, sans-serif;
@@ -264,6 +264,9 @@
       
       creator.on('mousedown', function(event) {
         var $this = $(this);
+        var position = $('#creator').position();
+        var positionLeft = position.left;
+        var positionTop = position.top;
         let className = 'd';
         let colorClass = [
         'orange', 'purple', 'red', 'pink',
@@ -283,8 +286,8 @@
               class: className,
               id: "item-" + ($('.d').length + 1)
             }).css({
-              left: event.pageX - $this.position().left - 25,
-              top: event.pageY - $this.position().top - 25,
+              left: event.pageX - positionLeft - 25,
+              top: event.pageY - positionTop - 25,
               position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
@@ -296,8 +299,8 @@
               class: className,
               id: "item-" + ($('.d').length + 1)
             }).css({
-              left: event.pageX - $this.position().left - 37.5,
-              top: event.pageY - $this.position().top - 37.5,
+              left: event.pageX - positionLeft - 37.5,
+              top: event.pageY - positionTop - 37.5,
               position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
@@ -309,8 +312,8 @@
               class: className,
               id: "item-" + ($('.d').length + 1)
             }).css({
-              left: event.pageX - $this.position().left - 50,
-              top: event.pageY - $this.position().top - 50,
+              left: event.pageX - 50,
+              top: event.pageY - 50,
               position: 'absolute'
             }).appendTo($this.parent()).draggable({
               containment: ".box",
