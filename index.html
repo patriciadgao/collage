@@ -245,6 +245,9 @@
     <button onclick="$('.d').remove()">Clear</button>
   </div>
   <script>
+    Draggable.create(draggables, {
+  allowEventDefault: true
+});
     $( ".e" ).droppable({accept: ".d", drop: function(event, ui) {
       ui.draggable.remove();
     }});
@@ -330,6 +333,10 @@
           }
         });
       });
+    $('.d').click(function() {
+      $(this).toggleClass('editing');
+      alert('clicked!');
+    });
     </script>
   </body>
   </html>
