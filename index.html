@@ -111,16 +111,8 @@
     }
 
     .sidebar {
-      background: #f5f5f5;
       min-width: 190px;
-    }
-    
-    .left {
       min-height: 500px;
-    }
-    
-    .right {
-      min-height: 415px;
     }
 
     .box {
@@ -136,15 +128,14 @@
       background: #cccccc;
       font-family: Helvetica, Arial, sans-serif;
       text-align: center;
-      padding-top: 25px;
-      min-height: 60px;
+      vertical-align: center;
     }
     
     .f {
-      padding: 10px;
-      background-color: palegoldenrod;
       font-family: Helvetica, Arial, sans-serif;
       text-align: center;
+      vertical-align: middle;
+      background: pink;
     }
 
     .active-drop {
@@ -176,26 +167,21 @@
       text-align: center;
       justify-content: center;
     }
-    
-    .generatespot {
-      position: relative;
-    }
   </style>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
   <div id="container" class="box">
-    <div class='sidebar left'>
-      <div id='generatespot'></div>
+    <div class='sidebar left f' id='creator'>
+      Drag to add
     </div>
     <div class='whitebox'>
     </div>
     <div>
-      <div class='sidebar right'>
-        <div class='f' id='creator'>Add</div>
+      <div class='sidebar right c'>
+        Drag to remove
       </div>
-      <div class='e'>Remove</div>
     </div>
   </div>
   <div class='buttonholder'>
