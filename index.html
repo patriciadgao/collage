@@ -113,6 +113,7 @@
     .sidebar {
       min-width: 190px;
       min-height: 500px;
+      color: rgb(255, 255, 255, 0.8);
     }
 
     .box {
@@ -124,11 +125,15 @@
     }
 
     .e {
-      vetical-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
     .f {
-      vertical-align: middle;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
     .textbox {
@@ -136,12 +141,6 @@
       font-family: Helvetica, Arial, sans-serif;
       color: white;
       font-weight: bold;
-    }
-
-    .active-drop {
-      font-weight: bold;
-      color: #808080;
-      background: #dedede;
     }
 
     button {
@@ -193,7 +192,7 @@
     <button onclick='window.location.reload()'>Start over</button>
   </div>
   <script>
-    $( ".e" ).droppable({accept: ".d", activeClass: "active-drop", drop: function(event, ui) {
+    $( ".e" ).droppable({accept: ".d", drop: function(event, ui) {
       ui.draggable.remove();
     }});
     $( ".d" ).draggable({containment: ".box", stack: ".d"});
