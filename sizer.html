@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Collage</title>
+  <style>
+    body {
+      background-image:  linear-gradient(45deg, #e9582b , #ba3ef6);
+      background-size: 200% 500%;
+      animation: gradient 3s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .small {
+      height: 50px;
+      width: 50px;
+    }
+
+    .medium {
+      height: 75px;
+      width: 75px;
+    }
+
+    .large {
+      height: 100px;
+      width: 100px;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    .redtriangle {
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent; 
+      border-bottom: 50px solid #c92121;
+    }
+
+    .pinktriangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent; 
+      border-bottom: 100px solid #d34c8b;
+    }
+
+    .orangetriangle {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent; 
+      border-bottom: 60px solid #e9582b;
+    }
+
+    .parallelogram {
+      width: 100px;
+      height: 50px;
+      transform: skew(20deg);
+      background: #555;
+    }
+
+    .orange {
+      background: #e9582b;
+    }
+
+    .purple {
+      background: #ba3ef6;
+    }
+
+    .red {
+      background: #c92121;
+    }
+
+    .pink {
+      background: #d34c8b;
+    }
+    
+    .grad {
+      background-image: linear-gradient(#e9582b, #ba3ef6);
+    }
+    
+    .grad-pink {
+      background-image: linear-gradient(#d04b98, #c92121);
+    }
+    
+    .grad-move {
+      background-image: linear-gradient(45deg, #e9582b , #ba3ef6);
+      background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+      animation-direction: alternate;
+    }
+
+    .grad-move-pink {
+      background-image: linear-gradient(45deg, #d04b98 , #e92121);
+      background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-purple {
+      background-image: linear-gradient(45deg, #d04b98 , #ba3ef6);
+      background-size: 200% 100%;
+      animation: gradient 3s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-fast-pink {
+      background-image: linear-gradient(45deg, #d04b98 , #e92121);
+      background-size: 200% 100%;
+      animation: gradient 2s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-fast-purple {
+      background-image: linear-gradient(45deg, #ba3ef6 , #d04b98);
+      background-size: 200% 100%;
+      animation: gradient 2s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-fast-orange {
+      background-image: linear-gradient(45deg, #ba3ef6 , #e9582b);
+      background-size: 200% 100%;
+      animation: gradient 2s linear infinite;
+      animation-direction: alternate;
+    }
+    
+    .grad-move-fast-red {
+      background-image: linear-gradient(45deg, #c92121 , #ba3ef6);
+      background-size: 200% 100%;
+      animation: gradient 2s linear infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0%}
+      100% {background-position: 100%}
+    }
+
+    .whitebox {
+      min-width: 500px;
+      min-height: 500px;
+      background: white;
+    }
+
+    .sidebar {
+      min-width: 190px;
+      min-height: 500px;
+      background: rgb(255, 255, 255, 0.2);
+    }
+    
+    .boxbox {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .e {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .f {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .textbox {
+      text-align: center;
+      font-family: Helvetica, Arial, sans-serif;
+      color: white;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 10px;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: white;
+      border-width: 2px;
+      background-color: transparent;   
+      text-decoration: none;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      margin: 10px;
+      outline: none;
+    }
+    
+    button:hover {
+      cursor: pointer;
+      background-color: rgb(255, 255, 255, 0.2);
+    }
+    
+    .buttonholder {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .editing {
+      border-style: solid;
+      border-color: lightskyblue;
+      border-width: 2px;
+    }
+  </style>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+  <div class='boxbox'>
+  <div id="container" class="box">
+    <div class='sidebar left f' id='creator'>
+      <div class='textbox'>
+        Drag to add
+      </div>
+    </div>
+    <div class='whitebox'>
+    </div>
+    <div>
+      <div class='sidebar right e'>
+        <div class='textbox'>
+          Drag to remove
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class='buttonholder'>
+    <!--
+    <button onclick='new CollageObject()'>Add a shape!</button>
+-->
+    <button onclick="$('.d').remove()">Clear</button>
+    <button onclick='window.location.assign("https://patriciadgao.github.io/collage")'>Regular Version</button>
+  </div>
+  <script>
+    $( ".e" ).droppable({accept: ".d", drop: function(event, ui) {
+      ui.draggable.remove();
+    }});
+    $( ".d" ).draggable({containment: ".box", stack: ".d"});
+    CollageObject = function() {
+      this.div = document.createElement( "div" );
+      document.getElementById( 'generatespot' ).appendChild( this.div );
+      let className = 'd';
+      let colorClass = [
+      'orange', 'purple', 'red', 'pink',
+      'grad', 'grad-pink', 'grad-move', 'grad-move-pink'
+      ];
+      let sizeShapeClass = [
+      'small circle', 'medium circle', 'large circle',
+      'small', 'medium', 'large'
+      ];
+      className = className + ' ' + colorClass[Math.floor(Math.random()*colorClass.length)];
+      className = className + ' ' + sizeShapeClass[Math.floor(Math.random()*sizeShapeClass.length)];
+      this.div.className = className;
+      $( ".d" ).draggable({containment: ".box", stack: ".d"});
+    };
+    $(function() {
+      var creator = $('#creator');
+      
+      creator.on('mousedown', function(event) {
+        var $this = $(this);
+        var position = $('#creator').offset();
+        var positionLeft = position.left;
+        var positionTop = position.top;
+        let className = 'd';
+        let colorClass = [
+        'orange', 'purple', 'red', 'pink',
+        'grad', 'grad-pink', 'grad-move', 'grad-move-pink', 'grad-move-purple',
+          'grad-move-fast-pink', 'grad-move-fast-purple', 'grad-move-fast-orange',
+          'grad-move-fast-red'
+        ];
+        let sizeShapeClass = [
+        'small circle', 'medium circle', 'large circle',
+        'small', 'medium', 'large'
+        ];
+        className = className + ' ' + colorClass[Math.floor(Math.random()*colorClass.length)];
+        className = className + ' ' + sizeShapeClass[Math.floor(Math.random()*sizeShapeClass.length)];
+        let sizeThing = (className.includes('small')) ? 'small' : (className.includes('medium')) ? 'medium' : 'large';
+          if (sizeThing === 'small') {
+            var $item = $('<div>', {
+              class: className,
+              id: "item-" + ($('.d').length + 1)
+            }).css({
+              left: event.pageX - positionLeft - 25,
+              top: event.pageY - positionTop - 25,
+              position: 'absolute'
+            }).appendTo($this.parent()).draggable({
+              containment: ".box",
+              stack: ".d"
+            });
+            $item.trigger(event);
+          } else if (sizeThing === 'medium') {
+            var $item = $('<div>', {
+              class: className,
+              id: "item-" + ($('.d').length + 1)
+            }).css({
+              left: event.pageX - positionLeft - 37.5,
+              top: event.pageY - positionTop - 37.5,
+              position: 'absolute'
+            }).appendTo($this.parent()).draggable({
+              containment: ".box",
+              stack: ".d"
+            });
+            $item.trigger(event);
+          } else {
+            var $item = $('<div>', {
+              class: className,
+              id: "item-" + ($('.d').length + 1)
+            }).css({
+              left: event.pageX - positionLeft - 50,
+              top: event.pageY - positionTop - 50,
+              position: 'absolute'
+            }).appendTo($this.parent()).draggable({
+              containment: ".box",
+              stack: ".d"
+            });
+            $item.trigger(event);
+          }
+        });
+      });
+    $('.d').click(function() {
+      $(this).toggleClass('editing');
+      alert('clicked!');
+    });
+    </script>
+  </body>
+  </html>
