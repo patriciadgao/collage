@@ -16,10 +16,55 @@
       width: 50px;
     }
     
-    .disappear {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear;
+.fade-out {
+  animation: fadeOut ease 8s;
+  -webkit-animation: fadeOut ease 8s;
+  -moz-animation: fadeOut ease 8s;
+  -o-animation: fadeOut ease 8s;
+  -ms-animation: fadeOut ease 8s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
 }
 
     .medium {
@@ -258,7 +303,7 @@
   <div class='boxbox'>
   <div id="container" class="box">
     <div class='sidebar left f' id='creator'>
-      <div class='textbox disappear'>
+      <div class='textbox fade-out'>
         Drag to add
         <br>
         (or tap on mobile)
@@ -268,7 +313,7 @@
     </div>
     <div>
       <div class='sidebar right e'>
-        <div class='textbox disappear'>
+        <div class='textbox fade-out'>
           Drag to remove
         </div>
       </div>
