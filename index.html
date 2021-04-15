@@ -15,6 +15,12 @@
       height: 50px;
       width: 50px;
     }
+    
+    .disappear {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 5s, opacity 5s linear;
+}
 
     .medium {
       height: 75px;
@@ -224,15 +230,17 @@
   <div class='boxbox'>
   <div id="container" class="box">
     <div class='sidebar left f' id='creator'>
-      <div class='textbox'>
+      <div class='textbox disappear'>
         Drag to add
+        <br>
+        (or tap on mobile)
       </div>
     </div>
     <div class='whitebox'>
     </div>
     <div>
       <div class='sidebar right e'>
-        <div class='textbox'>
+        <div class='textbox disappear'>
           Drag to remove
         </div>
       </div>
@@ -244,7 +252,6 @@
     <button onclick='new CollageObject()'>Add a shape!</button>
 -->
     <button onclick="$('.d').remove()">Clear</button>
-    <button onclick='window.location.assign("https://patriciadgao.github.io/collage/sizer")'>Size Version</button>
   </div>
   <script>
     $( ".e" ).droppable({accept: ".d", drop: function(event, ui) {
