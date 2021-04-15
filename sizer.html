@@ -190,7 +190,7 @@
       border-style: solid;
       border-color: white;
       border-width: 2px;
-      background-color: lightskyblue;   
+      background-color: dustyrose;   
       text-decoration: none;
       color: white;
       font-family: Helvetica, Arial, sans-serif;
@@ -332,9 +332,12 @@
           }
         });
       });
-    $('.d').click(function() {
-      $(this).toggleClass('editing');
-      alert('clicked!');
+    $('.d').mousedown(function() {
+      if($(this).hasClass('editing')) {
+        $(this).removeClass('editing');
+      } else {
+        $(this).addClass('editing');
+      }
     });
     </script>
   </body>
