@@ -8,12 +8,19 @@
       background: moccasin;
     }
      
-     .w {
+     .o {
         width: 150px;
         height: 150px;
-        background: white;
         margin-right: 10px;
         display: inline-block;
+     }
+     
+     .w {
+        background: white;
+     }
+     
+     .g {
+        background: lightgreen;
      }
      
      .searcher {
@@ -21,19 +28,34 @@
         top: 50px;
         left: 50%;
      }
+     
+     .gallery {
+        overflow: hidden;
+     }
+     
+     .lower {
+        z-index: -1;
+     }
   </style>
   </head>
   <body>
      <p class='searcher'>Casso</p>
      <div class='gallery'>
-     <div class='w'></div>
-     <div class='w'></div>
-     <div class='w'></div>
-     <div class='w'></div>
-        <div class='w'></div>
-     <div class='w'></div>
-     <div class='w'></div>
-     <div class='w'></div>
+     <div class='o w'></div>
+     <div class='o w'></div>
+     <div class='o w'></div>
+     <div class='o w'></div>
+        <div class='o w'></div>
+     <div class='o w'></div>
+     <div class='o w'></div>
+     <div class='o w'></div>
                    </div>
+     <div class='gallery lower'>
+        <div class='o g'></div>
+        <div class='o g'></div>
+     <div class='o g'></div>
+     <div class='o g'></div>
+     <div class='o g'></div>
+     </div>
   </body>
   </html>
